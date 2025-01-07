@@ -1,0 +1,102 @@
+*{ 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1d1d1d;
+    font-family: "Work Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.main{
+    direction: ltr;
+}
+
+.center-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-table{
+    width: 50%;
+    margin-top: 125px;
+}
+
+.task-table-header{
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: #4e6ac2;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.task-table-header h1{
+    display: inline;
+}
+
+button{
+    border: none;
+    font-size: 20px;
+    box-shadow: 0px 3px 5px rgba(168, 168, 168, 0.38);
+}
+
+button.circular {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.task-table-header button{
+    float: right;
+    background-color: white;
+    margin-right: 10px;
+}
+
+.task-table-body{
+    background-color: white;
+    padding: 20px;
+}
+
+.task{
+    display: flex;
+    background-color: #ececec;
+    padding: 10px;
+    border:solid #4e6ac2 1px;
+    transition: box-shadow 0.5s;
+}
+.task:hover{
+    box-shadow: 0px 3px 15px #1d1d1d;
+}
+.task-info{
+    width: 70%;
+}
+
+.task-actions{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.task-actions button{
+    color: white;
+}
+
+.button-delete{
+    background-color: #e45555;
+}
+.button-check{
+    background-color: #6fda5e;
+}
+.button-uncheck{
+    background-color: #b71c1c;
+}
+.button-edit{
+    background-color: #55e4ca;
+}
