@@ -18,11 +18,12 @@
 <body>
     <div class="main">
         <div class="center-content">
+            <!-- start tasks table -->
             <div class="task-table">
                 <!-- start table header -->
                 <div class="task-table-header">
                     <h1>Tasks</h1>
-                    <button class="circular"><i class="fa-solid fa-plus"></i></button>
+                    <button class="circular" id="add-modal-open"><i class="fa-solid fa-plus"></i></button>
                 </div>
                 <!-- end table header -->
 
@@ -45,10 +46,51 @@
                         <!-- task actions-->
                     </div>
                 </div>
-                <!-- start table body -->
+                <!-- end table body -->
             </div>
+            <!-- end tasks table -->
+
+            <!-- start modal create task -->
+            <section class="modal-container" id="add-modal">
+                <section class="modal">
+                  <button class="close-btn" id="add-modal-close">x</button>
+                  <div class="modal-content">
+                    <h2>Create Task!</h2>
+                    <form id="form-add-task" class="modal-form">
+                      <div>
+                        <label for="name">Name</label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          placeholder="Enter Name"
+                          class="form-input"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label for="date">Date</label>
+                        <input
+                          type="date"
+                          id="date"
+                          name="date"
+                          placeholder="Enter Date"
+                          class="form-input"
+                          required
+                        />
+                      </div>
+                      <button id="submit-add-task" class="submit-btn" type="submit">Add</button>
+                    </form>
+                  </div>
+                </section>
+              </section>
+            <!-- end modal create task -->
+
         </div>
     </div>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="./node_modules/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>
