@@ -39,14 +39,14 @@ const keyMyTasksInStorage = "MY-TASKS";
 
 let tasks = [];
 
+//localStorage...
 const tempData = localStorage.getItem(keyMyTasksInStorage);
-
 if(tempData !== null){
     tempTasks = JSON.parse(tempData);
     tempTasks.forEach((item)=>{
         tasks.push(new task(item.name,item.date,item.isDone,item.id));
     });
-}else{
+}else{//dataDefault...
     tasks.push(new task("Task one","01-01-2025",true));
     tasks.push(new task("Task two","02-22-2025"));
     tasks.push(new task("Task three","12-05-2025"));
