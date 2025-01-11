@@ -35,11 +35,23 @@ class task{
     }
 }
 
+const keyMyTasksInStorage = "MY-TASKS";
+
 let tasks = [];
 
-tasks.push(new task("Task one","01-01-2025",true));
-tasks.push(new task("Task two","02-22-2025"));
-tasks.push(new task("Task three","12-05-2025"));
+const tempData = localStorage.getItem(keyMyTasksInStorage);
+
+if(tempData !== null){
+    tempTasks = JSON.parse(tempData);
+    tempTasks.forEach((item)=>{
+        tasks.push(new task(item.name,item.date,item.isDone,item.id));
+    });
+}else{
+    tasks.push(new task("Task one","01-01-2025",true));
+    tasks.push(new task("Task two","02-22-2025"));
+    tasks.push(new task("Task three","12-05-2025"));
+    localStorage.setItem(keyMyTasksInStorage, JSON.stringify(tasks));
+}
 
 let tasksElemnt = document.querySelector(".task-table-body");
 
@@ -73,6 +85,7 @@ document.getElementById("form-add-task").addEventListener('submit', (event) => {
         event.target.date.value = "";
         modalCreate.classList.remove("show-modal");
         tasks.push(newTask);
+        localStorage.setItem(keyMyTasksInStorage, JSON.stringify(tasks));
     }
 });
 
@@ -117,6 +130,7 @@ document.getElementById("form-edit-task").addEventListener("submit",(event) => {
             return task;
         });
         modalEdit.classList.remove("show-modal");
+        localStorage.setItem(keyMyTasksInStorage, JSON.stringify(tasks));
     }
 });
 
@@ -130,6 +144,7 @@ function deleteTask(btnCurrent){
     if(indexRemove != -1){
         tasks.splice(indexRemove, 1);
         taskDiv.remove();
+        localStorage.setItem(keyMyTasksInStorage, JSON.stringify(tasks));
     }
 }
 
@@ -154,7 +169,6 @@ function changeStatus(btnCurrent){
             }
             return taskCurrent;
         });
-        console.log(tasks);
+        localStorage.setItem(keyMyTasksInStorage, JSON.stringify(tasks));
     }    
-
 }
