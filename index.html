@@ -83,11 +83,48 @@
                     </form>
                   </div>
                 </section>
-              </section>
+            </section>
             <!-- end modal create task -->
 
+            <!-- start modal edit task -->
+            <section class="modal-container" id="edit-modal">
+              <section class="modal">
+                <button class="close-btn" id="edit-modal-close">x</button>
+                <div class="modal-content">
+                  <h2>Create Task!</h2>
+                  <form id="form-edit-task" class="modal-form">
+                    <input type="hidden" name="id_task" id="id_task" required/>
+                    <div>
+                      <label for="name">Name</label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter Name"
+                        class="form-input"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label for="date">Date</label>
+                      <input
+                        type="date"
+                        id="date"
+                        name="date"
+                        placeholder="Enter Date"
+                        class="form-input"
+                        required
+                      />
+                    </div>
+                    <button id="submit-edit-task" class="submit-btn" type="submit">Edit</button>
+                  </form>
+                </div>
+              </section>
+            </section>
+          <!-- end modal create task -->
         </div>
     </div>
+    <script src="./node_modules/moment/min/moment.min.js"></script>
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="./node_modules/jquery-validation/dist/additional-methods.min.js"></script>
